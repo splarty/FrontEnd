@@ -151,7 +151,7 @@ function ViewModel() {
             // Animate marker on click
             var new_marker = this;
             if (typeof prev_marker != 'undefined') {
-                if (prev_marker.getAnimation() != null) {
+                if (prev_marker.getAnimation() !== null) {
                     prev_marker.setAnimation(null);
                     new_marker.setAnimation(google.maps.Animation.BOUNCE);
                     prev_marker = new_marker;
@@ -165,7 +165,7 @@ function ViewModel() {
             populateInfoWindow(this, location, infoWindow);
 
             // Team Sheets for each marker
-            if (typeof teamPlayers != 'undefined') {
+            if (typeof teamPlayers !== 'undefined') {
 
                 self.myValues.push("some value"); // Team Sheet Buttons Now visible
 
