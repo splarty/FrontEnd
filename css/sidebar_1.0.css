@@ -26,7 +26,7 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    /*background: #fff;*/
+    background: none !important;
     border: none;
     border-radius: 0;
     /*margin-bottom: 40px;*/
@@ -36,7 +36,7 @@ a:focus {
 
 .navbar-default {
     background: none !important;
-}    
+}
 
 .navbar-btn {
     box-shadow: none;
@@ -54,7 +54,7 @@ a:focus {
     box-shadow: none;
     outline: none !important;
     border: none;
-    background: #800000  !important;
+    background: #800000 !important;
 }
 
 .line {
