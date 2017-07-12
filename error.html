@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Error Page</title>
+    <style>
+    html {
+        background: url(images/error.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex !important;
+        /* make main axis vertical */
+        justify-content: center !important;
+        /* center items vertically, in this case */
+        align-items: center !important;
+        /* center items horizontally, in this case */
+    }
+
+    .wrapper {
+        width: 100% !important;
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        font-variant: small-caps;
+    }
+    
+    #errorMessage {
+        background-color: #C31014;
+        opacity: 0.6;
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        font-variant: small-caps;
+    }
+    
+    #messageText {
+        font-size: 40px;
+    }
+    
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #C31014;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 250px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+    
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .button:hover span {
+        padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id='errorMessage'>
+            Error Page:
+            <br>
+            <br> <span id='messageText'> We're Sorry, Something Went Wrong!
+            <br> Click Here to Go to Liverpool's Webpage</span>
+            <br>
+        </div>
+        <button class="button" onclick="location.href='http://www.liverpoolfc.com';"><span>Liverpool FC</span></button>
+    </div>
+</body>
+
+</html>
