@@ -2,6 +2,7 @@
 [image_0]: Landing.jpg
 [image_1]: pinClick.jpg
 [image_2]: menuClick.jpg
+[image_3]: responsive.gif
 # Neighborhood Map Project
 
 The _Neighborhood_ for this map covers the Stadia where Liverpool F.C., an English football team, will play all of their 38 _Premier League_ games this season.
@@ -26,12 +27,6 @@ The _Landing Page_ contains:
 
   - Take you to _Anfield_, the home stadium of Liverpool F.C.
 
-## Running the Application
-
-The _Application_ is self-contained.
-
-After making _index.html_ available to localhost, all that is required to run this application is to point your browser to that _index.html_ page.
-
 ## Functionality
 
 There are two ways to navigate this web application:
@@ -42,18 +37,20 @@ There are two ways to navigate this web application:
 
   - Details about the teams, derived from an asynchronous query (api.football-data.org), including the score of the game (currently, they are all _null:null_).
 
-  - Simultaneously, two buttons appear on the map with the _Team Squads_ for the two teams playing. This is derived from a synchronous query (again, api.football-data.org). This is not pivitol to the project and can be removed if required to pass the project.
-
   ![alt text][image_1]
 
 - Searching and clicking on team name in the sidebar. This results in:
 
   - The map location changes to a close up of the relevant stadium.
 
-  - The same popup and _Team Squad_ buttons as above.
+  - The same popup as above.
 
 
   ![alt text][image_2]
 
+## Responsive
 
-**Note: As mentioned, there is a synchronous query in this application. This part of the application is not required to fulfill the _Rubric_ for this project and can be removed if needed. The rationale for this approach was efficiency. The _Team Squads_ information for all teams is obtained from a single query, and the information is processed and associated with each of the markers. This avoids multiple queries while creating the markers.**
+The application is responsive. As seen below:
+
+  ![alt text][image_3]
+
