@@ -86,47 +86,12 @@ function ViewModel() {
         self.currentGame(game);
     };
 
-    // c. synchronous query: Team Sheets
-    var firstResponse = aJaxCall('http://api.football-data.org/v1/teams/64/fixtures');
 
-    if (typeof firstResponse != 'undefined') {
-        var response = JSON.parse(firstResponse);
-        var teamLinks = {};
-        var teamNames = {};
-        response.fixtures.forEach(function(d) {
-            teamLinks[d.awayTeamName] = d._links.awayTeam.href;
-            teams.forEach(function(e) {
-                var regex = new RegExp(e.toLowerCase());
-                var awayTeam = d.awayTeamName.toLowerCase();
-                if (regex.test(awayTeam)) {
-                    teamNames[e] = d.awayTeamName;
-                }
-            });
-        });
-
-        var teamPlayers = {};
-        for (var key in teamLinks) {
-            if (teamLinks.hasOwnProperty(key)) {
-                var secondResponse = aJaxCall(teamLinks[key] + '/players');
-                var newResponse = JSON.parse(secondResponse);
-                var temp = [];
-                for (var i = 0; i < newResponse.players.length; i++) {
-                    var d = newResponse.players[i];
-                    var tempObj = {};
-                    tempObj.jerseyNumber = d.jerseyNumber;
-                    tempObj.name = d.name;
-                    tempObj.position = d.position;
-                    temp.push(tempObj);
-                }
-                teamPlayers[key] = temp;
-
-            }
-        }
-    }
 
     // c. Markers
     // c.i. Initialize objects for markers
-    var infoWindow = new google.maps.InfoWindow();
+    var infoWindow = new google.maps.InfoWindow({ disableAutoPan: false });
+    // var infoWindow = new google.maps.InfoWindow({pixelOffset: new google.maps.Size(200,0)});
     var myIcon = new google.maps.MarkerImage("images/liverpool_marker.png", null, null, null, new google.maps.Size(51, 60));
     var pinIcon = new google.maps.MarkerImage("images/pin.png", null, null, null, new google.maps.Size(31, 40));
 
@@ -165,34 +130,6 @@ function ViewModel() {
             populateInfoWindow(this, location, infoWindow);
 
             // Team Sheets for each marker
-            if (typeof teamPlayers !== 'undefined') {
-
-                self.myValues.push("some value"); // Team Sheet Buttons Now visible
-
-                var htmlOpponent = teamPlayers[teamNames[location.opponent()]].map(function(element) {
-                    return '<span class="jNumber"><a href="#">' + element.jerseyNumber + ':</span> ' + element.name + '<span class="position">(' + element.position + ')</span>  </a>';
-                }).join('');
-
-                var htmlLiverpool = teamPlayers['Liverpool FC'].map(function(element) {
-                    return '<span class="jNumber"><a href="#">' + element.jerseyNumber + ':</span> ' + element.name + '<span class="position">(' + element.position + ')</span>  </a>';
-                }).join('');
-
-                htmlOpponent += '<a href="#"><span class="citation"><br/>Team Sheet Provided By: api.football-data.org</span>  </a>';
-
-                htmlLiverpool += '<a href="#"><span class="citation"><br/>Team Sheet Provided By: api.football-data.org</span>  </a>';
-
-                if (location.home() === 'H') {
-                    self.homeDetails(htmlLiverpool);
-                    self.awayDetails(htmlOpponent);
-                } else {
-                    self.homeDetails(htmlOpponent);
-                    self.awayDetails(htmlLiverpool);
-                }
-            } else {
-                // Error method to be run if request fails
-                self.homeDetails("I'm sorry, an error has occurred. Please try again later.");
-                self.awayDetails("I'm sorry, an error has occurred. Please try again later.");
-            }
 
         });
         marker.addListener('mouseover', function() {
