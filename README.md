@@ -3,6 +3,7 @@
 [image_1]: pinClick.jpg
 [image_2]: menuClick.jpg
 [image_3]: responsive.gif
+[image_4]: synchronousQuery.jpg
 # Neighborhood Map Project
 
 The _Neighborhood_ for this map covers the Stadia where Liverpool F.C., an English football team, will play all of their 38 _Premier League_ games this season.
@@ -29,15 +30,19 @@ The _Landing Page_ contains:
 
 ## Functionality
 
+![alt text][image_1]
+
 There are two ways to navigate this web application:
 
 - Clicking directly on the pins, which results in a popup including:
 
   - A streetview of the stadium for the relevant pin.
 
-  - Details about the teams, derived from an asynchronous query (api.football-data.org), including the score of the game (currently, they are all _null:null_).
+  - Details about the teams, derived from an asynchronous query (api.football-data.org), including the score of the game (currently, they are all _N/A : N/A_).
 
-  ![alt text][image_1]
+  - For the benefit of the reviewer, this is what a asynchronous query looks like:
+
+  ![alt text][image_4]
 
 - Searching and clicking on team name in the sidebar. This results in:
 
@@ -53,4 +58,3 @@ There are two ways to navigate this web application:
 The application is responsive. As seen below:
 
   ![alt text][image_3]
-
