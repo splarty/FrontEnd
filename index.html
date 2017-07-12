@@ -62,38 +62,14 @@
                             <i class="glyphicon glyphicon-align-left"></i>
                             <span>Toggle Sidebar</span>
                         </button>
-                        <button type="button" id='show-games' type="button" value="Show Games" class="btn btn-info navbar-btn">
+                        <button data-bind="click: showGames" type="button" id='show-games' type="button" value="Show Games" class="btn btn-info navbar-btn">
                             <i class="glyphicon glyphicon-eye-open"></i>
-                            <span data-bind="click: showGames"> &nbsp; Show Games  &nbsp; </span>
+                            <span > &nbsp; Show Games  &nbsp; </span>
                         </button>
-                        <button type="button" id='hide-games' type="button" value="Hide Games" class="btn btn-info navbar-btn">
+                        <button  data-bind="click: hideGames" type="button" id='hide-games' type="button" value="Hide Games" class="btn btn-info navbar-btn">
                             <i class="glyphicon glyphicon-home"></i>
-                            <span data-bind="click: hideGames"> &nbsp;&nbsp;Anfield  &nbsp; &nbsp;&nbsp; </span>
+                            <span> &nbsp;&nbsp;Anfield  &nbsp; &nbsp;&nbsp; </span>
                         </button>
-                    </div>
-                    <!-- Team Sheets Buttons -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul id="playersDiv" class="nav navbar-nav navbar-right">
-                            <li>
-                                <div class="dropdown">
-                                    <button data-bind="visible: myValues().length" id="homePlayersDiv" type="button" class="dropbtn btn btn-info navbar-btn">
-                                        <i class="glyphicon glyphicon glyphicon-list-alt"></i>
-                                        <span>Home Players</span>
-                                    </button>
-                                    <div data-bind="html: homeDetails" class="dropdown-content" id='homePlayers'>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dropdown">
-                                    <button data-bind="visible: myValues().length" id="awayPlayersDiv" type="button" class="dropbtn btn btn-info navbar-btn">
-                                        <i class="glyphicon glyphicon glyphicon-list-alt"></i>
-                                        <span>Away Players</span>
-                                    </button>
-                                    <div data-bind="html: awayDetails" class="dropdown-content" id='awayPlayers'>
-                                    </div>
-                                </div>
-                        </ul>
                     </div>
                 </div>
             </nav>
