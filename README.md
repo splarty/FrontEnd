@@ -26,6 +26,12 @@ The _Landing Page_ contains:
 
   - Take you to _Anfield_, the home stadium of Liverpool F.C.
 
+## Running the Application
+
+The _Application_ is self-contained.
+
+After making _index.html_ available to localhost, all that is required to run this application is to point your browser to that _index.html_ page.
+
 ## Functionality
 
 There are two ways to navigate this web application:
