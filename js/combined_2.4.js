@@ -277,10 +277,10 @@ function ViewModel() {
             if (location.home() == 'A') {
 
                 if (d.result.goalsHomeTeam === null) {
-                    d.result.goalsHomeTeam = 'N/A '
+                    d.result.goalsHomeTeam = 'N/A ';
                 }
                 if (d.result.goalsAwayTeam === null) {
-                    d.result.goalsAwayTeam = ' N/A'
+                    d.result.goalsAwayTeam = ' N/A';
                 }
 
                 if (regex.test(homeTeam)) {
