@@ -276,6 +276,13 @@ function ViewModel() {
             // }
             if (location.home() == 'A') {
 
+                if (d.result.goalsHomeTeam === null) {
+                    d.result.goalsHomeTeam = 'N/A '
+                }
+                if (d.result.goalsAwayTeam === null) {
+                    d.result.goalsAwayTeam = ' N/A'
+                }
+
                 if (regex.test(homeTeam)) {
                     text = '<div class="infoHeaderLeft">' + 'Away Result: ' +
                         d.homeTeamName + ' vs. ' + d.awayTeamName + '<br/>' + 'Status: ' + d.status + '<br/>' + 'Final Score: ' + d.result.goalsHomeTeam + ':' + d.result.goalsAwayTeam + '</div>';
@@ -298,18 +305,6 @@ function ViewModel() {
         }).join(', ');
     }
 
-    // i. synchronous query function
-    function aJaxCall(url) {
-        return $.ajax({
-            headers: {
-                'X-Auth-Token': '99aa091bd9f04c89a832bc063e789e10'
-            },
-            url: url,
-            dataType: 'json',
-            async: false,
-            type: 'GET'
-        }).responseText;
-    }
 
     // j. re-center map
     var getCen = map.getCenter();
