@@ -40,10 +40,6 @@ There are two ways to navigate this web application:
 
   - Details about the teams, derived from an asynchronous query (api.football-data.org), including the score of the game (currently, they are all _N/A : N/A_).
 
-  - For the benefit of the reviewer, this is what an asynchronous query looks like:
-
-  ![alt text][image_4]
-
 - Searching and clicking on team name in the sidebar. This results in:
 
   - The map location changes to a close up of the relevant stadium.
