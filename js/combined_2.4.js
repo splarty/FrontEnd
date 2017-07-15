@@ -201,7 +201,7 @@ function ViewModel() {
     });
 
 
-    // f. function to population Info Window for each marker
+    // f. function to population Info Window for each marker (based on a function from the udacity Google Maps course)
     function populateInfoWindow(marker, location, infoWindow) {
         var footballDataURL = 'http://api.football-data.org/v1/teams/64/fixtures';
         if (infoWindow.marker != marker) {
